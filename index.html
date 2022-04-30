@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDB</title>
+</head>
+<body>
+    
+    <h1 id="lock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+      </svg></h1>
+      <h1 id="unlock"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+        <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+      </svg></h1>
+
+      <div class="box">
+          <b> أختاري اليوم الذي بدأنا في الحياة؟</b> <br>
+          <input id="dateee" type="date">
+      </div>
+      <button onclick="myFunction()"> تأكيد </button>
+      <div class="type">
+        <span id="auto-type"></span>
+      </div>
+
+      <p id="demo"></p>
+</body>
+
+<Style>
+    @import url('https://fonts.googleapis.com/css2?family=Lateef&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+    #demo{
+        text-align: center;
+        font-size: large;
+        color: #DB17DB;
+        font-size: 30px;
+        font-family: 'Lateef';
+    }
+   
+    body{
+        background-color: #FBE2FB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h1 svg{
+        height: 200px;
+        width: auto;
+        color: #DB17DB;
+    }
+    #unlock{
+        display: none;
+    }
+    button{
+        margin: 10px;
+        width: 70px;
+        height: 30px;
+        font-size: 20px;
+        background-color: #DB17DB;
+        border: #FBE2FB 3px sold;
+        border-radius: 30px;
+        color:#FBE2FB;
+    }
+    input{
+        align-items: center;
+        margin-left: auto;
+        text-align: center;
+        border-radius: 30px;
+        width: 170px;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    b{
+        color: #DB17DB;
+    }
+</Style>
+    <script>
+        let select=document.getElementById("dateee");
+        function myFunction() {
+            console.log(select.value );
+            if(select.value=="2021-03-05"){
+                document.getElementById("lock").style.display = "none";
+                document.getElementById("unlock").style.display = "block";
+                console.log("dfag");
+                var audio = new Audio('https://wishesplus.com/wp-content/uploads/2021/02/Happy-Birthday-To-You-Happy-Birthday-Songs-2021-WishesPlus.com_.mp3');
+                audio.play();
+                
+                       var i = 0;
+                       var txt = "حبيبتي جنان كل عام وانتي بخير واريد ان اخبركي يوما ما سنعيش معاً للابد، بعفويتنا بضحكاتنا بأفراحنا وأحزاننا، سنقضي أياما بالطريقة التي نريدها، فهناك أيماماً حلوة تنتظرنا، وحكايات جملية لم تروى بعد، فقصة عشقنا لم تنتهي، بل لازالت تنمو في البداية المشوار, فما أود قوله هو أننا سنتزوج، ونكمل حبنا في عامنا الخاص، ذلك العالم الذي بنيناه معا بكل حب. احبكي جدا جميلتي احبكي جدا طفلتيييييييييييييييييييييييييي الجميلة كل عام وانتي بخير ايتها الاميرة الصغيرة  ";
+                        var speed = 200;
+                        typeWriter();
+                        function typeWriter() {
+                        if (i < txt.length) {
+                            document.getElementById("demo").innerHTML += txt.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, speed);
+                        }
+                        }
+            }
+            
+            }
+
+
+            
+
+
+
+
+    </script>
+</html>
